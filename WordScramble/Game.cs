@@ -24,7 +24,7 @@ namespace WordScramble
         /// </summary>
         public Game()
         {
-            // ////////// => TO IMPLEMENT <= //////////// //
+            ShowMenu();
         }
 
         /// <summary>
@@ -51,10 +51,10 @@ namespace WordScramble
                 switch (choice)
                 {
                     case "Start Game":
-                        // ////////// => TO IMPLEMENT <= //////////// //
+                        StartGame();
                         break;
                     case "View Game Stats":
-                        // ////////// => TO IMPLEMENT <= //////////// //
+                        ShowGameStats();
                         break;
                     case "Quit":
                         return;
@@ -79,12 +79,12 @@ namespace WordScramble
             /// <summary>
             /// The randomly chosen word for the current round.
             /// </summary>
-            string word = // ////////// => TO IMPLEMENT <= //////////// //
+            string word = WordProvider.GetRandomWord();
 
             /// <summary>
             /// The scrambled version of the word.
             /// </summary>
-            string scrambledWord = // ////////// => TO IMPLEMENT <= //////////// //
+            string scrambledWord = WordProvider.GetScrambledWord();
 
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Unscramble the word:[/]");
@@ -105,7 +105,7 @@ namespace WordScramble
             /// <summary>
             /// Checks if the player's guess is correct.
             /// </summary>
-            bool isCorrect = true;
+            bool isCorrect = (scrambledWord == userInput);
 
             if (isCorrect)
             {
@@ -158,10 +158,8 @@ namespace WordScramble
                 {
                     // ////////// => TO IMPLEMENT <= //////////// //
                 }
-                
-                // Add row to table
-                // Table.AddRow() only accepts strings
-                // ////////// => TO IMPLEMENT <= //////////// //
+
+                table.AddRow("");
             }
 
             AnsiConsole.Write(table);
