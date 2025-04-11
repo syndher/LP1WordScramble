@@ -159,7 +159,7 @@ namespace WordScramble
                     // ////////// => TO IMPLEMENT <= //////////// //
                 }
 
-                table.AddRow(gameStats[i]);
+                table.AddRow(GameResult(gameStats[i]));
             }
 
             AnsiConsole.Write(table);

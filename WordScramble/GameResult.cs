@@ -36,6 +36,7 @@ namespace WordScramble
         {
             Word = word.ToUpper();
             TimeTaken = timeTaken;
+            Console.WriteLine($"Word: {Word} | TimeTaken: {TimeTaken}");
         }
     }
 }
