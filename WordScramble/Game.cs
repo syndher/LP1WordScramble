@@ -84,7 +84,7 @@ namespace WordScramble
             /// <summary>
             /// The scrambled version of the word.
             /// </summary>
-            string scrambledWord = WordProvider.GetScrambledWord();
+            string scrambledWord = WordProvider.GetScrambledWord(word);
 
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Unscramble the word:[/]");
@@ -120,7 +120,7 @@ namespace WordScramble
                 }
 
                 // Add new result at the beginning
-                gameStats[0] = // ////////// => TO IMPLEMENT <= //////////// //
+                gameStats[0] = GameResult();
             }
             else
             {
@@ -159,7 +159,7 @@ namespace WordScramble
                     // ////////// => TO IMPLEMENT <= //////////// //
                 }
 
-                table.AddRow("");
+                table.AddRow(gameStats[i]);
             }
 
             AnsiConsole.Write(table);

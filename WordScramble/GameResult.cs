@@ -34,7 +34,7 @@ namespace WordScramble
         /// <see cref="double"/> (in seconds).</param>
         public GameResult(string word, double timeTaken)
         {
-            word = word.ToUpper();
+            Word = word.ToUpper();
             TimeTaken = timeTaken;
         }
     }
